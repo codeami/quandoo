@@ -21,7 +21,7 @@ node {
    }
    stage('Test') {
      // run tests after Build is a success
-     bat 'cucumber -p secure_area features BROWSER=chrome'
+     sh("cucumber -p secure_area features BROWSER=chrome")
    }
    stage('Docker build/push') {
      // withEnv(["PATH=C:/cygwin/bin:$PATH"]) {
@@ -30,7 +30,7 @@ node {
        def app = docker.build("sushantbhatnagar/dockerized_quandoo", "-f ${dockerfile} .")
        app.push('latest')
         }
-      //}
+      }
     }
   }
   catch(e) {
