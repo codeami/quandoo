@@ -30,7 +30,7 @@ node {
        def app = docker.build("sushantbhatnagar/dockerized_quandoo", "-f ${dockerfile} .")
        app.push('latest')
         }
-      }
+      //}
     }
   }
   catch(e) {
