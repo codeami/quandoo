@@ -21,7 +21,7 @@ node {
    }
    stage('Test') {
      // run tests after Build is a success
-     sh("bundle && bundle exec cucumber -p secure_area features BROWSER=chrome")
+     sh("gem install bundler && bundle && bundle exec cucumber -p secure_area features BROWSER=chrome")
    }
    stage('Docker build/push') {
      // withEnv(["PATH=C:/cygwin/bin:$PATH"]) {
