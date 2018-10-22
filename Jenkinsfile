@@ -27,7 +27,7 @@ node {
      // withEnv(["PATH=C:/cygwin/bin:$PATH"]) {
        docker.withRegistry('https://index.docker.io/v1/', 'docker-hub') {
        def dockerfile = 'Dockerfile_chrome'
-       def app = docker.build("sushantbhatnagar/dockerized_quandoo", "-f ${dockerfile} .")
+       def app = docker.build("codeami/dockerized_quandoo", "-f ${dockerfile} .")
        app.push('latest')
         }
       //}
