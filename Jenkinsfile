@@ -13,7 +13,7 @@ node(){
     //}
     stage('Container Tests') {
             //withEnv(["PATH+cygwin=C:/cygwin/bin:$PATH"]){
-                def myTestContainer = docker.image('sushantbhatnagar/dockerized_quandoo:test_0.2')
+                def myTestContainer = docker.image('sushantbhatnagar/dockerized_quandoo:test_0.1')
                 myTestContainer.pull()
                 myTestContainer.inside() {
                 // no  java or no jenkins islie fail ho raha hai!
