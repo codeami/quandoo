@@ -19,7 +19,7 @@ node(){
                 // no  java or no jenkins islie fail ho raha hai!
                 // withDockerContainer('myTestContainer') {
                    // echo 'inside container'
-                    sh 'cucumber -p secure_area -t @login BROWSER=chrome'
+                    sh("gem install bundler && bundle && bundle exec cucumber -p secure_area features BROWSER=chrome")
                     //echo 'Tests Completed!!'
                 //}
            // }
